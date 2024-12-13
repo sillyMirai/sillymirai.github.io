@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0%;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #78290f;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+a.navlink {  
+    font-size: 1.5em;
+    height: 100%; /* Keeps the border at 100% height */
+
+    display: inline-flex; /* Enables alignment within the height */
+    align-items: center; /* Centers the text vertically */
+    
+    float: left;
+
+    padding: 0 1vw;
+    border-right: 3px solid #ff7d00;
+
+    background-color: #78290f;
+    transition: .3s;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ffecd1;
+}
+
+a.navlink:hover {
+    cursor: pointer;
+    background-color: #581f0c;
+    transition: .3s;
+}
+
+a.icon {
+    margin: 0 1vw 0 auto;
+    float: right;
+
+    display: inline-flex; /* Enables alignment within the height */
+    align-items: center; /* Centers the text vertically */
+
+    color: red;
+    font-size: 3em;
+}
