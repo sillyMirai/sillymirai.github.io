@@ -1,27 +1,37 @@
+/*
+
+#70153F
+#D85261
+#FDB1A5
+#FFDCCC
+#FFF9EB
+*/
+
 body {
     margin: 0;
     padding: 0%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+/* Navbar */
 nav {
     width: 100%;
     height: 10vh;
 
+    z-index: 3;
     position: fixed;
 
     display: flex;
     align-items: center;
 
-    background-color: #78290f;
+    background-color: #D85261;
 }
 
-nav a {
-    text-decoration: none;
-}
-
+/* Navlinks */
 a.navlink {  
     font-size: 1.8em;
+    text-decoration: none;
+
     height: 100%; /* Keeps the border at 100% height */
 
     display: inline-flex; /* Enables alignment within the height */
@@ -30,62 +40,69 @@ a.navlink {
     float: left;
 
     padding: 0 1vw;
-    border-right: 3px solid #ff7d00;
+    border-right: 3px solid #70153F;
 
-    background-color: #78290f;
     transition: .3s;
-
-    color: #ffecd1;
+    color: #FFF9EB;
 }
 
 a.navlink:hover {
     cursor: pointer;
-    background-color: #581f0c;
+    background-color: #A33643;
     transition: .3s;
 }
 
-a.icon {
-    margin: 0 1vw 0 auto;
+/* Social Icons */
+div.socials {
     float: right;
+    margin-left: auto;
 
-    display: inline-flex; /* Enables alignment within the height */
-    align-items: center; /* Centers the text vertically */
-
-    color: red;
-    font-size: 3em;
+    display: inline-flex;
+    align-items: center;
 }
 
+div.socials a {
+    margin-right: 1vw;
+}
+
+div.socials img {
+    width: 3vw;
+}
+
+/* Welcome Section */
 div.welcome {
-    background-color: #f4a261;
+    background-color: #FDB1A5;
+    border-bottom: 2px solid #D85261;
 
     width: 100%;
     height: 80vh;
 
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    border-bottom: 1px solid #3a1408;
+    flex-direction: column;
 }
 
 div.welcome img {
     border-radius: 50%;
-    border: 2px solid #3a1408;
+    border: 2px solid #70153F;
+    margin-top: 5%;
 }
 
 div.welcome h1 {
-    color: #ffecd1;
-    -webkit-text-stroke: 1px #3a1408;
+    color: #FFF9EB;
+    -webkit-text-stroke: 1px #D85261;
 
     width: 20%;
     font-size: 1.5em;
-
     text-align: center;
 }
 
 /* Showcase Section */
-
 div.showcase {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -93,11 +110,17 @@ div.showcase {
 
     column-gap: 5vw;
     padding: 3vw;
+
+    position: relative;
+    z-index: 2;
+
+    background-color: #FFDCCC;
 }
 
 div.item {
-    position: relative; /* Establish positioning context for child elements */
-    overflow: hidden; /* Ensure child elements do not overflow the container */
+    position: relative; 
+    overflow: hidden;
+    border-radius: 5%;
 }
 
 div.item .overlay {
@@ -147,4 +170,18 @@ div.item:hover .overlay {
 
 div.item:hover h1 {
     opacity: 1; /* Show the text */
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 10vh;
+
+    background-color: #D85261;
+    color: #FFF9EB;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
