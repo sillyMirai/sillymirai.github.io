@@ -11,6 +11,14 @@ body {
     margin: 0;
     padding: 0%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    cursor: default;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 /* Navbar */
@@ -85,6 +93,7 @@ div.welcome {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 1vw;
 }
 
 div.welcome img {
@@ -100,6 +109,8 @@ div.welcome h1 {
     width: 20%;
     font-size: 1.5em;
     text-align: center;
+
+    margin: 0;
 }
 
 /* Skills Section */
@@ -109,22 +120,44 @@ span.skill {
     background-color: #70153F;
 
     border: 1px solid #A33643;
-    border-radius: 1vw;
-    
-    text-align: center;
-    display: inline-block;
+    border-radius: 1vw;    
 
     margin: 0 .2vw;
+
+    text-align: center;
+    display: inline-block;
 
     white-space: nowrap;
     overflow: hidden;
 
     font-size: 1.1em;
-    padding: 0 1vw;
+    padding: 0 1vw 0 0.6vw;
 }
 
-span#id::before {
-    
+span.skill::before {
+    content: "";
+    margin-right: 0.25vw;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    background-size: contain; /* Ensures the image scales properly */
+    background-repeat: no-repeat;
+
+    width: 18px;
+    height: 18px;
+}
+
+span#git::before {
+    background-image: url("Media/git.png");
+}
+
+span#lua::before {
+    background-image: url("Media/studio.png");
+}
+
+span#rojo::before {
+    background-image: url("Media/rojo.png");
 }
 
 /* Showcase Section */
@@ -161,7 +194,10 @@ div.item .overlay {
 
 div.item img {
     display: block;
+
     width: 100%;
+    height: 100%;
+    
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
