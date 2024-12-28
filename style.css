@@ -102,6 +102,31 @@ div.welcome h1 {
     text-align: center;
 }
 
+/* Skills Section */
+
+span.skill {
+    color: #FFF9EB;
+    background-color: #70153F;
+
+    border: 1px solid #A33643;
+    border-radius: 1vw;
+    
+    text-align: center;
+    display: inline-block;
+
+    margin: 0 .2vw;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    font-size: 1.1em;
+    padding: 0 1vw;
+}
+
+span#id::before {
+    
+}
+
 /* Showcase Section */
 div.showcase {
     display: grid;
