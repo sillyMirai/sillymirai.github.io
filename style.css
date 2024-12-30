@@ -7,12 +7,18 @@
 #FFF9EB
 */
 
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    padding: 0%;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 0;
 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     cursor: default;
+
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -35,46 +41,61 @@ nav {
     background-color: #D85261;
 }
 
+#menu {
+    display: none;
+
+    height: 50%;
+    width: auto;
+
+    margin-left: 3vw;
+}
+
 /* Navlinks */
-a.navlink {  
+
+div.navlinks {
+    display: inline-flex;
+    height: 100%;
+}
+
+div.navlinks a {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0 1.5vw;
+    border-right: 3px solid #70153F;
+
     font-size: 1.8em;
     text-decoration: none;
 
-    height: 100%; /* Keeps the border at 100% height */
-
-    display: inline-flex; /* Enables alignment within the height */
-    align-items: center; /* Centers the text vertically */
-    
-    float: left;
-
-    padding: 0 1vw;
-    border-right: 3px solid #70153F;
-
-    transition: .3s;
     color: #FFF9EB;
+    transition: .3s;
 }
 
-a.navlink:hover {
+div.navlinks a:hover {
     cursor: pointer;
     background-color: #A33643;
-    transition: .3s;
 }
 
 /* Social Icons */
+
 div.socials {
+    display: inline-flex;
     float: right;
-    margin-left: auto;
+
+    height: 100%;
+    margin: 0 0.5vw 0 auto;
+}
+
+div.socials a {
+    height: 100%;
+    padding-right: 1.5vw;
 
     display: inline-flex;
     align-items: center;
 }
 
-div.socials a {
-    margin-right: 1vw;
-}
-
 div.socials img {
-    width: 3vw;
+    height: 70%;
 }
 
 /* Welcome Section */
@@ -106,9 +127,8 @@ div.welcome h1 {
     color: #FFF9EB;
     -webkit-text-stroke: 1px #D85261;
 
-    width: 20%;
-    font-size: 1.5em;
     text-align: center;
+    text-wrap: wrap;
 
     margin: 0;
 }
@@ -120,9 +140,10 @@ span.skill {
     background-color: #70153F;
 
     border: 1px solid #A33643;
-    border-radius: 1vw;    
+    border-radius: 2vw;    
 
     margin: 0 .2vw;
+    padding: 0 1vw 0 0.6vw;
 
     text-align: center;
     display: inline-block;
@@ -131,7 +152,7 @@ span.skill {
     overflow: hidden;
 
     font-size: 1.1em;
-    padding: 0 1vw 0 0.6vw;
+    line-height: 1.4em;
 }
 
 span.skill::before {
@@ -139,7 +160,9 @@ span.skill::before {
     margin-right: 0.25vw;
 
     display: inline-block;
-    vertical-align: middle;
+
+    position: relative;
+    top: 3px;
 
     background-size: contain; /* Ensures the image scales properly */
     background-repeat: no-repeat;
@@ -149,27 +172,26 @@ span.skill::before {
 }
 
 span#git::before {
-    background-image: url("Media/git.png");
+    background-image: url("Media/logos/git.png");
 }
 
 span#lua::before {
-    background-image: url("Media/studio.png");
+    background-image: url("Media/logos/studio.png");
 }
 
 span#rojo::before {
-    background-image: url("Media/rojo.png");
+    background-image: url("Media/logos/rojo.png");
 }
 
 /* Showcase Section */
 div.showcase {
     display: grid;
-    grid-template-columns: auto auto auto;
     justify-content: center;
 
-    column-gap: 5vw;
-    padding: 3vw;
+    column-gap: 3vw;
 
     position: relative;
+    padding: 4vw;
     z-index: 2;
 
     background-color: #FFDCCC;
@@ -178,7 +200,7 @@ div.showcase {
 div.item {
     position: relative; 
     overflow: hidden;
-    border-radius: 5%;
+    border-radius: 10%;
 }
 
 div.item .overlay {
@@ -197,6 +219,7 @@ div.item img {
 
     width: 100%;
     height: 100%;
+    aspect-ratio: 4/3;
 
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
@@ -238,7 +261,6 @@ div.item:hover h1 {
 footer {
     width: 100%;
     height: 15vh;
-    font-size: 1.5em;
 
     background-color: #D85261;
     color: #FFF9EB;
@@ -249,7 +271,6 @@ footer {
 
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 footer .icon-container {
@@ -266,7 +287,150 @@ footer span {
 }
 
 footer img {
-    width: 2vw;
-    height: auto;
     vertical-align: middle;
+}
+
+/* Responsive Styling */
+
+/* Adjustments for desktops */
+@media only screen and (min-width: 1024px) {
+    nav {
+        height: 8vh;
+    }
+
+    div.welcome img {
+        width: 15%;
+    }
+
+    div.welcome h1 {
+        font-size: 1.8rem;
+    }
+
+    div.showcase {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 3vw;
+    }
+
+    footer span {
+        font-size: 1.6em;
+    }
+
+    footer .icon-container {
+        gap: 0.5vw;
+    }
+
+    footer img {
+        width: 2.5vw;
+    }
+}
+
+/* Adjustments for tablets */
+@media only screen and (max-width: 1024px) {
+
+    div.welcome img {
+        width: 20%;
+    }
+
+    div.welcome h1 {
+        font-size: 1.6rem;
+    }
+
+    div.showcase {
+        row-gap: 4vw;
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    }
+
+    footer span {
+        font-size: 1.7em;
+    }
+
+    footer .icon-container {
+        gap: 0.7vw;
+    }
+
+    footer img {
+        width: 3vw;
+    }
+}
+
+/* Adjustments for small screens (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    #menu {
+        display: flex; /* Show hamburger on mobile */
+    }
+    
+
+    div.navlinks {
+        display: none;
+    }
+
+    div.socials {
+        display: none;
+    }
+
+    div.socials img {
+        height: 50%;
+    }
+
+    span.skill {
+        border-radius: 3vw;   
+        padding: 0 1.5vw 0 1vw;
+    }
+
+    span.skill::before {
+        margin-right: 0.6vw;
+    }
+
+    div.welcome img {
+        width: 25%;
+    }
+
+    div.welcome h1 {
+        font-size: 1.4rem;
+    }
+
+    footer .icon-container {
+        gap: 1vw;
+    }
+
+    footer img {
+        width: 4vw;
+    }
+}
+
+/* Mobile-first adjustments (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+    div.welcome img {
+        width: 30%;
+    }
+
+    div.welcome h1 {
+        font-size: 1.2rem;
+    }
+
+    div.welcome {
+        height: 60vh;
+    }
+
+    div.showcase {
+        row-gap: 7vw;
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    span.skill {
+        padding: 0 2vw 0 1.5vw;
+        border-radius: 4vw;   
+    }
+
+    span.skill::before {
+        margin-right: 0.8vw;
+    }
+
+    footer .icon-container {
+        gap: 2vw;
+    }
+
+    footer img {
+        width: 6.5vw;
+    }
 }
