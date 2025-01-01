@@ -8,20 +8,31 @@
     <title>Portfolio</title>
 </head>
 
-<body>
-    
+<body> 
     <nav>
         <img src="Media/menu.png" alt="Menu" id="menu" onclick="toggleMenu()">
 
         <div class="mobileLinks">
-            <a href="#showcase">Work</a>
-            <a href="#">About</a>
-            <a href="#contacts">Contact</a>
+            <img src="Media/cross.png" alt="Close" onclick="toggleMenu()">
+
+            <a href="#about" onclick="toggleMenu()">About</a>
+            <a href="#showcase" onclick="toggleMenu()">Work</a>
+            <a href="#contacts" onclick="toggleMenu()">Contact</a>
+
+            <div class="mobileSocials">
+                <a href="https://create.roblox.com/talent/creators/5134339351" target="_blank">
+                    <img src="Media/logos/studio-white.png" alt="Creator Hub" title="Creator Page">
+                </a>
+        
+                <a href="https://www.youtube.com/@sillyMirai" target="_blank">
+                    <img src="Media/logos/youtube.png" alt="Youtube" title="My Works">
+                </a>
+            </div>
         </div>
 
         <div class="navlinks">
+            <a href="#about">About</a>
             <a href="#showcase">Work</a>
-            <a href="#">About</a>
             <a href="#contacts">Contact</a>
         </div>
 
@@ -36,23 +47,23 @@
         </div>
     </nav>
 
-    <div class="welcome">
-        <img src="Media/pfp.png" alt="PFP" width="8%">
-        <h1>Hey there! I'm Mirai <br>
-            I'm a chill guy / <br>
-            idk / silly billy</h1>
-
-        <h1>My Skills:</h1>
-        <div>
-            <span class="skill" id="lua">Lua Scripting</span>
-            <span class="skill" id="git">Git</span>
-            <span class="skill" id="rojo">Rojo</span>   
+    <div id="about">
+        <div class="welcome">
+            <img src="Media/pfp.png" alt="PFP" width="8%">
+            <h1>Hey there! I'm Mirai <br>
+                I'm a Lua Scripter / <br>
+                Game Dev / Web Developer</h1>
+    
+            <h1>My Skills:</h1>
+            <div>
+                <span class="skill" id="lua">Lua Scripting</span>
+                <span class="skill" id="git">Git</span>
+                <span class="skill" id="rojo">Rojo</span>   
+            </div>
         </div>
-
     </div>
 
     <div class="showcase" id="showcase">
-
         <div class="item">
             <a href="https://devforum.roblox.com/t/roblox-image-generator/3063648" target="_blank">
                 <div class="overlay"></div>
